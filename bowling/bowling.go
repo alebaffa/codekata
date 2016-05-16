@@ -26,7 +26,7 @@ func (game *Game) GetScore() int {
 			indexRoll++
 
 		} else {
-			score += game.normalScore(indexRoll)
+			score += game.normalFrame(indexRoll)
 			indexRoll += 2
 		}
 	}
@@ -49,6 +49,6 @@ func (game *Game) nextTwoBallsForStrike(indexRoll int) int {
 	return game.throws[indexRoll+1] + game.throws[indexRoll+2]
 }
 
-func (game *Game) normalScore(indexRoll int) int {
+func (game *Game) normalFrame(indexRoll int) int {
 	return game.throws[indexRoll] + game.throws[indexRoll+1]
 }
