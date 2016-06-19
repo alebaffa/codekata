@@ -11,6 +11,8 @@ func FizzBuzz(max int) string {
 	for num := 1; num <= max; num++ {
 		if num%3 == 0 {
 			result.WriteString("Fizz")
+		} else if num%5 == 0{
+			result.WriteString("Buzz")
 		} else {
 			result.WriteString(strconv.Itoa(num))
 		}
