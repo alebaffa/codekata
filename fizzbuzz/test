@@ -1,0 +1,12 @@
+BenchmarkFib1-4      	10000000	       255 ns/op
+BenchmarkFizzBuzz3-4 	 3000000	       445 ns/op
+BenchmarkFizzBuzz5-4 	 3000000	       597 ns/op
+BenchmarkFizzBuzz15-4	 1000000	      1152 ns/op
+ok  	github.com/alebaffa/kata/fizzbuzz	8.078s
+
+
+BenchmarkFib1-4      	10000000	       211 ns/op
+BenchmarkFizzBuzz3-4 	 1000000	      1071 ns/op
+BenchmarkFizzBuzz5-4 	 1000000	      1403 ns/op
+BenchmarkFizzBuzz15-4	 1000000	      2744 ns/op
+ok  	github.com/alebaffa/kata/fizzbuzz	7.570s
