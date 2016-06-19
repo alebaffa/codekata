@@ -9,7 +9,9 @@ func FizzBuzz(max int) string {
 	var result bytes.Buffer
 
 	for num := 1; num <= max; num++ {
-		if num%3 == 0 {
+		if  num%3 == 0 && num%5 == 0{
+			result.WriteString("FizzBuzz")
+		} else if num%3 == 0 {
 			result.WriteString("Fizz")
 		} else if num%5 == 0{
 			result.WriteString("Buzz")
