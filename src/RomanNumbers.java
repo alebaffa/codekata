@@ -21,21 +21,26 @@ public class RomanNumbers {
 
 		String result = "";
 
-		if(number > 50){
+		while(number >= 50){
 			result += "L";
-			return result + convertToRoman(number - 50);
+			number -= 50;
 		}
 
-		if(number > 10){
+		while(number >= 10){
 			result += "X";
-			return result + convertToRoman(number - 10);
+			number -= 10;
 		}
 
-		if(number > 5){
+		while(number >= 5){
 			result += "V";
-			return result + convertToRoman(number - 5);
+			number -= 5;
 		}
 
-		return dictionary.get(1) + convertToRoman(number - 1);
+		while(number >= 1){
+			result += "I";
+			number -= 1;
+		}
+
+		return result;
 	}
 }
