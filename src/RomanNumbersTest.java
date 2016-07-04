@@ -16,6 +16,13 @@ public class RomanNumbersTest {
 		assertThat(converter.convertToRoman(5), is(equalTo("V")));
 		assertThat(converter.convertToRoman(6), is(equalTo("VI")));
 		assertThat(converter.convertToRoman(7), is(equalTo("VII")));
+		assertThat(converter.convertToRoman(9), is(equalTo("IX")));
+		assertThat(converter.convertToRoman(10), is(equalTo("X")));
+		assertThat(converter.convertToRoman(11), is(equalTo("XI")));
+		assertThat(converter.convertToRoman(40), is(equalTo("XL")));
+		assertThat(converter.convertToRoman(50), is(equalTo("L")));
+		assertThat(converter.convertToRoman(55), is(equalTo("LV")));
+		assertThat(converter.convertToRoman(60), is(equalTo("LX")));
 	}
 
 
