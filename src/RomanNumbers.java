@@ -1,12 +1,9 @@
 public class RomanNumbers {
 
-
+	private static String[] dictionary = {"I", "II", "III"};
+	
 	public String convertToRoman(int number) {
-		String result = "I";
 
-		if(number > 1)
-			result += "I";
-
-		return result;
+		return dictionary[number - 1];
 	}
 }

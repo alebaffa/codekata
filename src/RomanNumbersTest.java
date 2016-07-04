@@ -11,6 +11,7 @@ public class RomanNumbersTest {
 		RomanNumbers converter = new RomanNumbers();
 		assertThat(converter.convertToRoman(1), is(equalTo("I")));
 		assertThat(converter.convertToRoman(2), is(equalTo("II")));
+		assertThat(converter.convertToRoman(3), is(equalTo("III")));
 	}
 
 
