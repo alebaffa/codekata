@@ -10,6 +10,7 @@ public class RomanNumbersTest {
 	public void convertArabicToRomanNumbers(){
 		RomanNumbers converter = new RomanNumbers();
 		assertThat(converter.convertToRoman(1), is(equalTo("I")));
+		assertThat(converter.convertToRoman(2), is(equalTo("II")));
 	}
 
 
