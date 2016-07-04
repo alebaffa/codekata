@@ -1,44 +1,34 @@
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class RomanNumbers {
 
-	private static Map<Integer, String> dictionary = new HashMap<>();
+	private static Map<Integer, String> dictionary = new LinkedHashMap<>();
+
 	static {
-		dictionary.put(1, "I");
-		dictionary.put(4, "IV");
-		dictionary.put(5, "V");
-		dictionary.put(9, "IX");
-		dictionary.put(10, "X");
-		dictionary.put(40, "XL");
 		dictionary.put(50, "L");
+		dictionary.put(40, "XL");
+		dictionary.put(10, "X");
+		dictionary.put(9, "IX");
+		dictionary.put(5, "V");
+		dictionary.put(4, "IV");
+		dictionary.put(1, "I");
 	};
 
 	public String convertToRoman(int number) {
 
-		if(dictionary.containsKey(number))
-			return dictionary.get(number);
-
 		String result = "";
 
-		while(number >= 50){
-			result += "L";
-			number -= 50;
-		}
+		Iterator iterator = dictionary.entrySet().iterator();
 
-		while(number >= 10){
-			result += "X";
-			number -= 10;
-		}
+		while (iterator.hasNext()) {
+			Map.Entry pair = (Map.Entry) iterator.next();
+			Integer arabicNumber = (Integer) pair.getKey();
+			String romanNumber = (String) pair.getValue();
 
-		while(number >= 5){
-			result += "V";
-			number -= 5;
-		}
-
-		while(number >= 1){
-			result += "I";
-			number -= 1;
+			while (number >= arabicNumber) {
+				result += romanNumber;
+				number -= arabicNumber;
+			}
 		}
 
 		return result;
