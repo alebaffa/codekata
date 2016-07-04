@@ -8,14 +8,19 @@ public class RomanNumbers {
 		dictionary.put(1, "I");
 		dictionary.put(4, "IV");
 		dictionary.put(5, "V");
-		dictionary.put(6, "VI");
-		dictionary.put(7, "VII");
 	};
 
 	public String convertToRoman(int number) {
 
 		if(dictionary.containsKey(number))
 			return dictionary.get(number);
+
+		String result = "";
+
+		if(number > 5){
+			result += "V";
+			return result + convertToRoman(number - 5);
+		}
 
 		return dictionary.get(1) + convertToRoman(number - 1);
 	}
