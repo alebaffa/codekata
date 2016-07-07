@@ -2,35 +2,31 @@ import java.util.*;
 
 public class RomanNumbers {
 
-	private static Map<Integer, String> dictionary = new LinkedHashMap<>();
+	private static List<Number> dictionary = new ArrayList<>();
 
 	static {
-		dictionary.put(50, "L");
-		dictionary.put(40, "XL");
-		dictionary.put(10, "X");
-		dictionary.put(9, "IX");
-		dictionary.put(5, "V");
-		dictionary.put(4, "IV");
-		dictionary.put(1, "I");
-	};
+		dictionary.add(new Number(50, "L"));
+		dictionary.add(new Number(40, "XL"));
+		dictionary.add(new Number(10, "X"));
+		dictionary.add(new Number(9, "IX"));
+		dictionary.add(new Number(5, "V"));
+		dictionary.add(new Number(4, "IV"));
+		dictionary.add(new Number(1, "I"));
+	}
 
-	public String convertToRoman(int number) {
 
-		String result = "";
+	public String convertToRoman(int arabicInput) {
 
-		Iterator iterator = dictionary.entrySet().iterator();
+		StringBuffer result = new StringBuffer();
 
-		while (iterator.hasNext()) {
-			Map.Entry pair = (Map.Entry) iterator.next();
-			Integer arabicNumber = (Integer) pair.getKey();
-			String romanNumber = (String) pair.getValue();
+		for(Number item : dictionary) {
 
-			while (number >= arabicNumber) {
-				result += romanNumber;
-				number -= arabicNumber;
+			while (arabicInput >= item.getArabic()) {
+				result.append(item.getRoman());
+				arabicInput -= item.getArabic();
 			}
 		}
 
-		return result;
+		return result.toString();
 	}
 }
