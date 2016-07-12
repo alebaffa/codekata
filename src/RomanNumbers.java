@@ -18,14 +18,13 @@ public class RomanNumbers {
 	public String convertToRoman(int arabicInput) {
 
 		StringBuffer result = new StringBuffer();
+		dictionary.sort(Comparator.comparingInt(Number::getArabic).reversed());
 
-		for(Number item : dictionary) {
-
+		for(Number item : dictionary)
 			while (arabicInput >= item.getArabic()) {
 				result.append(item.getRoman());
 				arabicInput -= item.getArabic();
 			}
-		}
 
 		return result.toString();
 	}
